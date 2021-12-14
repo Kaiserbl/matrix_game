@@ -6,9 +6,9 @@ class CardState2 extends StatelessWidget {
   String estado2;
 
   CardState2({
-    this.titulo2,
-    this.pathImagen2,
-    this.estado2,
+    required this.titulo2,
+    required this.pathImagen2,
+    required this.estado2,
   });
 
   @override

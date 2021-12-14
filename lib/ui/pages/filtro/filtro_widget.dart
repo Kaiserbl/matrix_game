@@ -7,19 +7,20 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class FiltroWidget extends StatefulWidget {
-  const FiltroWidget({Key key}) : super(key: key);
+  const FiltroWidget({Key? key}) : super(key: key);
 
   @override
   _FiltroWidgetState createState() => _FiltroWidgetState();
 }
+
 //prueba
 class _FiltroWidgetState extends State<FiltroWidget> {
-  bool checkboxListTileValue1;
-  bool checkboxListTileValue2;
-  bool checkboxListTileValue3;
-  bool checkboxListTileValue4;
-  bool checkboxListTileValue5;
-  bool checkboxListTileValue6;
+  late bool checkboxListTileValue1;
+  late bool checkboxListTileValue2;
+  late bool checkboxListTileValue3;
+  late bool checkboxListTileValue4;
+  late bool checkboxListTileValue5;
+  late bool checkboxListTileValue6;
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -101,9 +102,9 @@ class _FiltroWidgetState extends State<FiltroWidget> {
                                 ),
                               ),
                               CheckboxListTile(
-                                value: checkboxListTileValue1 ??= false,
+                                value: checkboxListTileValue1,
                                 onChanged: (newValue) => setState(
-                                    () => checkboxListTileValue1 = newValue),
+                                    () => checkboxListTileValue1 = newValue!),
                                 tileColor: Color(0xFFF5F5F5),
                                 dense: false,
                                 controlAffinity:
@@ -142,9 +143,9 @@ class _FiltroWidgetState extends State<FiltroWidget> {
                                 ),
                               ),
                               CheckboxListTile(
-                                value: checkboxListTileValue2 ??= false,
+                                value: checkboxListTileValue2,
                                 onChanged: (newValue) => setState(
-                                    () => checkboxListTileValue2 = newValue),
+                                    () => checkboxListTileValue2 = newValue!),
                                 tileColor: Color(0xFFF5F5F5),
                                 dense: false,
                                 controlAffinity:
@@ -183,9 +184,9 @@ class _FiltroWidgetState extends State<FiltroWidget> {
                                 ),
                               ),
                               CheckboxListTile(
-                                value: checkboxListTileValue3 ??= false,
+                                value: checkboxListTileValue3,
                                 onChanged: (newValue) => setState(
-                                    () => checkboxListTileValue3 = newValue),
+                                    () => checkboxListTileValue3 = newValue!),
                                 tileColor: Color(0xFFF5F5F5),
                                 dense: false,
                                 controlAffinity:
@@ -292,9 +293,9 @@ class _FiltroWidgetState extends State<FiltroWidget> {
                                 ),
                               ),
                               CheckboxListTile(
-                                value: checkboxListTileValue4 ??= false,
+                                value: checkboxListTileValue4,
                                 onChanged: (newValue) => setState(
-                                    () => checkboxListTileValue4 = newValue),
+                                    () => checkboxListTileValue4 = newValue!),
                                 tileColor: Color(0xFFF5F5F5),
                                 dense: false,
                                 controlAffinity:
@@ -333,9 +334,9 @@ class _FiltroWidgetState extends State<FiltroWidget> {
                                 ),
                               ),
                               CheckboxListTile(
-                                value: checkboxListTileValue5 ??= false,
+                                value: checkboxListTileValue5,
                                 onChanged: (newValue) => setState(
-                                    () => checkboxListTileValue5 = newValue),
+                                    () => checkboxListTileValue5 = newValue!),
                                 tileColor: Color(0xFFF5F5F5),
                                 dense: false,
                                 controlAffinity:
@@ -374,9 +375,9 @@ class _FiltroWidgetState extends State<FiltroWidget> {
                                 ),
                               ),
                               CheckboxListTile(
-                                value: checkboxListTileValue6 ??= false,
+                                value: checkboxListTileValue6,
                                 onChanged: (newValue) => setState(
-                                    () => checkboxListTileValue6 = newValue),
+                                    () => checkboxListTileValue6 = newValue!),
                                 tileColor: Color(0xFFF5F5F5),
                                 dense: false,
                                 controlAffinity:

@@ -6,9 +6,9 @@ class StateModel {
   String estado;
 
   StateModel({
-    this.titulo,
-    this.pathImagen,
-    this.estado,
+    required this.titulo,
+    required this.pathImagen,
+    required this.estado,
   });
 
   factory StateModel.fromJson(Map<String, dynamic> map) {

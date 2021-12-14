@@ -13,7 +13,7 @@ import 'package:proyecto_mintic/ui/pages/perfil/perfil_widget.dart';
 import 'package:proyecto_mintic/ui/widgets/card_state2.dart';
 
 class BusquedaWidget extends StatefulWidget {
-  const BusquedaWidget({Key key}) : super(key: key);
+  const BusquedaWidget({Key? key}) : super(key: key);
 
   @override
   _BusquedaWidgetState createState() => _BusquedaWidgetState();

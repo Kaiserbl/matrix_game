@@ -3,5 +3,5 @@ import 'package:get/get.dart';
 
 class LocationController extends GetxController {
   // Observables
-  final location = Rx<Position>(null);
+  final location = Rx<Position?>(null);
 }

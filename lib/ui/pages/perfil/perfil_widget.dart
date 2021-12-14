@@ -9,7 +9,7 @@ import '../flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 
 class PerfilWidget extends StatefulWidget {
-  const PerfilWidget({Key key}) : super(key: key);
+  const PerfilWidget({Key? key}) : super(key: key);
 
   @override
   _PerfilWidgetState createState() => _PerfilWidgetState();

@@ -4,7 +4,7 @@ import '../permission_management.dart';
 class PermissionsController extends GetxController {
   // Observables
   final _location = false.obs;
-  PermissionManager _manager;
+  late PermissionManager _manager;
 
   set permissionManager(PermissionManager manager) {
     _manager = manager;

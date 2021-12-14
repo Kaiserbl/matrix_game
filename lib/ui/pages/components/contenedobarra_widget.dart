@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ContenedobarraWidget extends StatefulWidget {
-  const ContenedobarraWidget({Key key}) : super(key: key);
+  const ContenedobarraWidget({Key? key}) : super(key: key);
 
   @override
   _ContenedobarraWidgetState createState() => _ContenedobarraWidgetState();

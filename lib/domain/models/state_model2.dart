@@ -4,9 +4,9 @@ class StateModel2 {
   String estado2;
 
   StateModel2({
-    this.titulo2,
-    this.pathImagen2,
-    this.estado2,
+    required this.titulo2,
+    required this.pathImagen2,
+    required this.estado2,
   });
 
   factory StateModel2.fromJson(Map<String, dynamic> map) {

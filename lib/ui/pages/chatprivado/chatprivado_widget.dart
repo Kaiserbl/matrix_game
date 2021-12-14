@@ -5,7 +5,7 @@ import '../flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 
 class ChatprivadoWidget extends StatefulWidget {
-  const ChatprivadoWidget({Key key}) : super(key: key);
+  const ChatprivadoWidget({Key? key}) : super(key: key);
 
   @override
   _ChatprivadoWidgetState createState() => _ChatprivadoWidgetState();

@@ -1,20 +1,21 @@
 import 'package:get/get.dart';
 import 'package:proyecto_mintic/controlador/image_controller.dart';
 import 'package:proyecto_mintic/ui/pages/login/login_widget.dart';
+import 'package:proyecto_mintic/ui/pages/ubicacion/ubicacion.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 
 class ConfiguracionWidget extends StatefulWidget {
-  const ConfiguracionWidget({Key key}) : super(key: key);
+  const ConfiguracionWidget({Key? key}) : super(key: key);
 
   @override
   _ConfiguracionWidgetState createState() => _ConfiguracionWidgetState();
 }
 
 class _ConfiguracionWidgetState extends State<ConfiguracionWidget> {
-  bool switchListTileValue1;
-  bool switchListTileValue2;
-  bool switchListTileValue3;
+  late bool switchListTileValue1 = false;
+  late bool switchListTileValue2 = false;
+  late bool switchListTileValue3 = false;
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -40,7 +41,7 @@ class _ConfiguracionWidgetState extends State<ConfiguracionWidget> {
             Align(
               alignment: AlignmentDirectional(0, 0.15),
               child: SwitchListTile(
-                value: switchListTileValue3 ??= false,
+                value: switchListTileValue3,
                 onChanged: (newValue) => {
                   setState(() => switchListTileValue3 = newValue),
                   image.cambiarOscuro()
@@ -161,7 +162,7 @@ class _ConfiguracionWidgetState extends State<ConfiguracionWidget> {
                               primary: Color(0xFFFABAFA),
                             ),
                             onPressed: () {
-                              Get.to(() => LoginWidget());
+                              Get.to(() => GpsScreen());
                             },
                             child: Padding(
                               padding:

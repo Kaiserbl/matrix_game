@@ -6,19 +6,19 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
 class RegistroWidget extends StatefulWidget {
-  const RegistroWidget({Key key}) : super(key: key);
+  const RegistroWidget({Key? key}) : super(key: key);
 
   @override
   _RegistroWidgetState createState() => _RegistroWidgetState();
 }
 
 class _RegistroWidgetState extends State<RegistroWidget> {
-  TextEditingController textController1;
-  bool checkboxListTileValue;
-  TextEditingController textController2;
-  TextEditingController textController3;
-  TextEditingController textController4;
-  TextEditingController textController5;
+  late TextEditingController textController1;
+  late bool checkboxListTileValue;
+  late TextEditingController textController2;
+  late TextEditingController textController3;
+  late TextEditingController textController4;
+  late TextEditingController textController5;
   final formKey = GlobalKey<FormState>();
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -240,9 +240,9 @@ class _RegistroWidgetState extends State<RegistroWidget> {
                                 Align(
                                   alignment: AlignmentDirectional(0, 0.65),
                                   child: CheckboxListTile(
-                                    value: checkboxListTileValue ??= false,
-                                    onChanged: (newValue) => setState(
-                                        () => checkboxListTileValue = newValue),
+                                    value: checkboxListTileValue,
+                                    onChanged: (newValue) => setState(() =>
+                                        checkboxListTileValue = newValue!),
                                     tileColor: Color(0xFFF5F5F5),
                                     dense: true,
                                     controlAffinity:
@@ -295,7 +295,7 @@ class _RegistroWidgetState extends State<RegistroWidget> {
                                       textAlign: TextAlign.center,
                                       keyboardType: TextInputType.emailAddress,
                                       validator: (val) {
-                                        if (val.isEmpty) {
+                                        if (val!.isEmpty) {
                                           return 'El campo es requerido';
                                         }
 
@@ -508,7 +508,7 @@ class _RegistroWidgetState extends State<RegistroWidget> {
                                       keyboardType:
                                           TextInputType.visiblePassword,
                                       validator: (val) {
-                                        if (val.isEmpty) {
+                                        if (val!.isEmpty) {
                                           return 'El campo es requerido';
                                         }
 
@@ -576,7 +576,7 @@ class _RegistroWidgetState extends State<RegistroWidget> {
                                       ),
                                       textAlign: TextAlign.center,
                                       validator: (val) {
-                                        if (val.isEmpty) {
+                                        if (val!.isEmpty) {
                                           return 'El campo es requerido';
                                         }
 
@@ -630,7 +630,7 @@ class _RegistroWidgetState extends State<RegistroWidget> {
                                       ),
                                       textAlign: TextAlign.center,
                                       validator: (val) {
-                                        if (val.isEmpty) {
+                                        if (val!.isEmpty) {
                                           return 'El campo es requerido';
                                         }
 
@@ -700,7 +700,7 @@ class _RegistroWidgetState extends State<RegistroWidget> {
                                       keyboardType:
                                           TextInputType.visiblePassword,
                                       validator: (val) {
-                                        if (val.isEmpty) {
+                                        if (val!.isEmpty) {
                                           return 'El campo es requerido';
                                         }
 

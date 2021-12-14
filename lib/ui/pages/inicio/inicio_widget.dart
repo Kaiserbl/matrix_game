@@ -10,7 +10,7 @@ import 'package:proyecto_mintic/domain/models/state_model.dart';
 import 'package:flutter/material.dart';
 
 class InicioWidget extends StatefulWidget {
-  const InicioWidget({Key key}) : super(key: key);
+  const InicioWidget({Key? key}) : super(key: key);
 
   @override
   _InicioWidgetState createState() => _InicioWidgetState();

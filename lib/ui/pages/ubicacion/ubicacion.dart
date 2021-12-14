@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class GpsScreen extends StatefulWidget {
-  const GpsScreen({Key key}) : super(key: key);
+  const GpsScreen({Key? key}) : super(key: key);
 
   @override
   _State createState() => _State();
@@ -15,9 +15,9 @@ class GpsScreen extends StatefulWidget {
 enum RadioState { on, off }
 
 class _State extends State<GpsScreen> {
-  PermissionsController permissionsController;
-  LocationController locationController;
-  LocationManager manager;
+  late PermissionsController permissionsController;
+  late LocationController locationController;
+  late LocationManager manager;
 
   @override
   void initState() {

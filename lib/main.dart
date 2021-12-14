@@ -19,7 +19,7 @@ void main() {
   PermissionsController permissionsController =
       Get.put(PermissionsController());
   permissionsController.permissionManager = PermissionManager();
-  Get.lazyPut(() => LocationController());
+  Get.put(LocationController());
   runApp(MyApp());
 }
 
