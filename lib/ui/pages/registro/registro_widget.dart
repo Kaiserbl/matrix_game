@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:proyecto_mintic/controlador/image_controller.dart';
+import 'package:proyecto_mintic/domain/controller/image_controller.dart';
 import 'package:proyecto_mintic/ui/pages/filtro/filtro_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import 'package:auto_size_text/auto_size_text.dart';

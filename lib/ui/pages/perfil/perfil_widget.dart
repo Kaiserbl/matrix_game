@@ -1,6 +1,6 @@
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
-import 'package:proyecto_mintic/controlador/image_controller.dart';
+import 'package:proyecto_mintic/domain/controller/image_controller.dart';
 import 'package:proyecto_mintic/ui/pages/chatprivado/chatprivado_widget.dart';
 import 'package:get/get.dart';
 import 'package:proyecto_mintic/ui/pages/configuracion/configuracion_widget.dart';

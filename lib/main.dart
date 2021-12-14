@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get.dart';
-import 'package:proyecto_mintic/controlador/image_controller.dart';
-import 'package:proyecto_mintic/controlador/state_controller.dart';
+import 'package:proyecto_mintic/domain/controller/image_controller.dart';
+import 'package:proyecto_mintic/domain/controller/state_controller.dart';
+import 'package:proyecto_mintic/domain/controller/state_controller2.dart';
 import 'package:proyecto_mintic/domain/use_case/controllers/location.dart';
 import 'package:proyecto_mintic/domain/use_case/controllers/permissions.dart';
 import 'package:proyecto_mintic/domain/use_case/permission_management.dart';
 import 'package:proyecto_mintic/ui/pages/login/login_widget.dart';
-
-import 'controlador/state_controller2.dart';
 
 //probando rama juan
 void main() {
