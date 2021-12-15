@@ -32,6 +32,7 @@ class _RegistroWidgetState extends State<RegistroWidget> {
     textController3 = TextEditingController();
     textController4 = TextEditingController();
     textController5 = TextEditingController();
+    checkboxListTileValue = false;
   }
 
   @override
@@ -260,6 +261,7 @@ class _RegistroWidgetState extends State<RegistroWidget> {
                                       color: Color(0xFFC9C6C6),
                                       borderRadius: BorderRadius.circular(36),
                                     ),
+                                    //control Nombre
                                     child: TextFormField(
                                       controller: textController1,
                                       obscureText: false,
@@ -380,24 +382,27 @@ class _RegistroWidgetState extends State<RegistroWidget> {
                                                   primary: Color(0xFFFABAFA),
                                                 ),
                                                 onPressed: () async {
-                                                  try {
-                                                    await authenticationController
-                                                        .signup(
-                                                            userName:
-                                                                textController1
-                                                                    .text,
-                                                            nickName:
-                                                                textController2
-                                                                    .text,
-                                                            email:
-                                                                textController3
-                                                                    .text,
-                                                            password:
-                                                                textController4
-                                                                    .text);
-                                                    /*Get.back();*/
-                                                  } catch (e) {
-                                                    print(e);
+                                                  if (checkboxListTileValue ==
+                                                      true) {
+                                                    try {
+                                                      await authenticationController
+                                                          .signup(
+                                                              userName:
+                                                                  textController1
+                                                                      .text,
+                                                              nickName:
+                                                                  textController2
+                                                                      .text,
+                                                              email:
+                                                                  textController3
+                                                                      .text,
+                                                              password:
+                                                                  textController4
+                                                                      .text);
+                                                      /*Get.back();*/
+                                                    } catch (e) {
+                                                      print(e);
+                                                    }
                                                   }
                                                 },
                                                 child: Padding(
@@ -450,6 +455,7 @@ class _RegistroWidgetState extends State<RegistroWidget> {
                                       color: Color(0xFFC9C6C6),
                                       borderRadius: BorderRadius.circular(36),
                                     ),
+                                    //contro nickName
                                     child: TextFormField(
                                       controller: textController2,
                                       obscureText: false,
@@ -520,6 +526,7 @@ class _RegistroWidgetState extends State<RegistroWidget> {
                                       color: Color(0xFFC9C6C6),
                                       borderRadius: BorderRadius.circular(36),
                                     ),
+                                    //contro Corre
                                     child: TextFormField(
                                       controller: textController3,
                                       obscureText: false,
@@ -574,6 +581,7 @@ class _RegistroWidgetState extends State<RegistroWidget> {
                                       color: Color(0xFFC9C6C6),
                                       borderRadius: BorderRadius.circular(36),
                                     ),
+                                    // control Contraseña
                                     child: TextFormField(
                                       controller: textController4,
                                       obscureText: false,
@@ -642,6 +650,7 @@ class _RegistroWidgetState extends State<RegistroWidget> {
                                       color: Color(0xFFC9C6C6),
                                       borderRadius: BorderRadius.circular(36),
                                     ),
+                                    //control ConContraseña
                                     child: TextFormField(
                                       controller: textController5,
                                       obscureText: false,
