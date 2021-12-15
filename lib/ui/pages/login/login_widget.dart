@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:proyecto_mintic/domain/controller/auth_controller.dart';
 import 'package:proyecto_mintic/domain/controller/image_controller.dart';
 import 'package:proyecto_mintic/ui/pages/inicio/inicio_widget.dart';
 import 'package:proyecto_mintic/ui/pages/registro/registro_widget.dart';
@@ -18,6 +19,21 @@ class _LoginWidgetState extends State<LoginWidget> {
   late bool passwordVisibility;
   final formKey = GlobalKey<FormState>();
   final scaffoldKey = GlobalKey<ScaffoldState>();
+
+  _login(theEmail, thePassword) async {
+    print('_login $theEmail $thePassword');
+    try {
+      AuthenticationController authenticationController = Get.find();
+      await authenticationController.login(theEmail, thePassword);
+    } catch (err) {
+      Get.snackbar(
+        "Login",
+        err.toString(),
+        icon: Icon(Icons.person, color: Colors.red),
+        snackPosition: SnackPosition.BOTTOM,
+      );
+    }
+  }
 
   @override
   void initState() {
@@ -421,7 +437,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                         padding: const EdgeInsets.all(-8),
                                         primary: Color(0xFFFABAFA),
                                       ),
-                                      onPressed: () {
+                                      onPressed: () async {
                                         print(isEmail(textController1.text));
                                         if (textController1.text.isEmpty &&
                                             textController2.text.isEmpty) {
@@ -440,7 +456,9 @@ class _LoginWidgetState extends State<LoginWidget> {
                                             6) {
                                           return errorFormato2();
                                         } else {
-                                          Get.to(() => InicioWidget());
+                                          await _login(textController1.text,
+                                              textController2.text);
+                                          // Get.to(() => InicioWidget());
                                         }
                                       },
                                       child: Padding(
