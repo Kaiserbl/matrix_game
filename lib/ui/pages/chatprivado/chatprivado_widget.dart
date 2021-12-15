@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:proyecto_mintic/controlador/image_controller.dart';
+import 'package:matrix_game/domain/controller/image_controller.dart';
 
 import '../flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';

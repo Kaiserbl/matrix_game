@@ -1,12 +1,12 @@
 import 'package:get/get.dart';
-import 'package:proyecto_mintic/controlador/image_controller.dart';
-import 'package:proyecto_mintic/controlador/state_controller.dart';
-import 'package:proyecto_mintic/ui/pages/busqueda/busqueda_widget.dart';
-import 'package:proyecto_mintic/ui/pages/chatprivado/chatprivado_widget.dart';
-import 'package:proyecto_mintic/ui/pages/configuracion/configuracion_widget.dart';
-import 'package:proyecto_mintic/ui/pages/perfil/perfil_widget.dart';
-import 'package:proyecto_mintic/ui/widgets/card_state.dart';
-import 'package:proyecto_mintic/domain/models/state_model.dart';
+import 'package:matrix_game/domain/controller/image_controller.dart';
+import 'package:matrix_game/domain/controller/state_controller.dart';
+import 'package:matrix_game/ui/pages/busqueda/busqueda_widget.dart';
+import 'package:matrix_game/ui/pages/chatprivado/chatprivado_widget.dart';
+import 'package:matrix_game/ui/pages/configuracion/configuracion_widget.dart';
+import 'package:matrix_game/ui/pages/perfil/perfil_widget.dart';
+import 'package:matrix_game/ui/widgets/card_state.dart';
+import 'package:matrix_game/data/models/state_model.dart';
 import 'package:flutter/material.dart';
 
 class InicioWidget extends StatefulWidget {

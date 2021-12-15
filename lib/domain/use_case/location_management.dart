@@ -1,4 +1,4 @@
-import 'package:proyecto_mintic/data/services/geolocation.dart';
+import 'package:matrix_game/data/services/geolocation.dart';
 import 'package:geolocator/geolocator.dart';
 
 class LocationManager {
