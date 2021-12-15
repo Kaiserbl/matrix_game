@@ -1,4 +1,4 @@
-import 'package:proyecto_mintic/domain/services/location.dart';
+import 'package:matrix_game/domain/services/location.dart';
 import 'package:geolocator/geolocator.dart';
 
 class GpsService implements LocationInterface {

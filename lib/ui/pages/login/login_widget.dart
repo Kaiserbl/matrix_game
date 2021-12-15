@@ -1,8 +1,8 @@
 import 'package:get/get.dart';
-import 'package:proyecto_mintic/domain/controller/auth_controller.dart';
-import 'package:proyecto_mintic/domain/controller/image_controller.dart';
-import 'package:proyecto_mintic/ui/pages/inicio/inicio_widget.dart';
-import 'package:proyecto_mintic/ui/pages/registro/registro_widget.dart';
+import 'package:matrix_game/domain/controller/auth_controller.dart';
+import 'package:matrix_game/domain/controller/image_controller.dart';
+import 'package:matrix_game/ui/pages/inicio/inicio_widget.dart';
+import 'package:matrix_game/ui/pages/registro/registro_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 

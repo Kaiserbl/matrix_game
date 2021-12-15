@@ -2,14 +2,14 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get.dart';
-import 'package:proyecto_mintic/domain/controller/image_controller.dart';
-import 'package:proyecto_mintic/domain/controller/state_controller.dart';
-import 'package:proyecto_mintic/domain/controller/state_controller2.dart';
-import 'package:proyecto_mintic/domain/use_case/controllers/location.dart';
-import 'package:proyecto_mintic/domain/use_case/controllers/permissions.dart';
-import 'package:proyecto_mintic/domain/use_case/permission_management.dart';
-import 'package:proyecto_mintic/ui/pages/login/login_widget.dart';
-import 'package:proyecto_mintic/ui/widgets/pages/firebase_central.dart';
+import 'package:matrix_game/domain/controller/image_controller.dart';
+import 'package:matrix_game/domain/controller/state_controller.dart';
+import 'package:matrix_game/domain/controller/state_controller2.dart';
+import 'package:matrix_game/domain/use_case/controllers/location.dart';
+import 'package:matrix_game/domain/use_case/controllers/permissions.dart';
+import 'package:matrix_game/domain/use_case/permission_management.dart';
+import 'package:matrix_game/ui/pages/login/login_widget.dart';
+import 'package:matrix_game/ui/widgets/pages/firebase_central.dart';
 
 //probando rama juan
 void main() {
