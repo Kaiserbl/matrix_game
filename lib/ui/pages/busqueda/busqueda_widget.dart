@@ -3,14 +3,14 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_instance/src/extension_instance.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:get/get_state_manager/src/rx_flutter/rx_getx_widget.dart';
-import 'package:matrix_game/domain/controller/image_controller.dart';
-import 'package:matrix_game/domain/controller/state_controller2.dart';
-import 'package:matrix_game/data/models/state_model2.dart';
+import 'package:proyecto_mintic/controlador/image_controller.dart';
+import 'package:proyecto_mintic/controlador/state_controller2.dart';
+import 'package:proyecto_mintic/domain/models/state_model2.dart';
 import 'package:flutter/material.dart';
-import 'package:matrix_game/ui/pages/chatprivado/chatprivado_widget.dart';
-import 'package:matrix_game/ui/pages/inicio/inicio_widget.dart';
-import 'package:matrix_game/ui/pages/perfil/perfil_widget.dart';
-import 'package:matrix_game/ui/widgets/card_state2.dart';
+import 'package:proyecto_mintic/ui/pages/chatprivado/chatprivado_widget.dart';
+import 'package:proyecto_mintic/ui/pages/inicio/inicio_widget.dart';
+import 'package:proyecto_mintic/ui/pages/perfil/perfil_widget.dart';
+import 'package:proyecto_mintic/ui/widgets/card_state2.dart';
 
 class BusquedaWidget extends StatefulWidget {
   const BusquedaWidget({Key? key}) : super(key: key);

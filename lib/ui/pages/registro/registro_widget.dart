@@ -1,7 +1,6 @@
 import 'package:get/get.dart';
-import 'package:matrix_game/domain/controller/auth_controller.dart';
-import 'package:matrix_game/domain/controller/image_controller.dart';
-import 'package:matrix_game/ui/pages/filtro/filtro_widget.dart';
+import 'package:proyecto_mintic/controlador/image_controller.dart';
+import 'package:proyecto_mintic/ui/pages/filtro/filtro_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
@@ -261,7 +260,6 @@ class _RegistroWidgetState extends State<RegistroWidget> {
                                       color: Color(0xFFC9C6C6),
                                       borderRadius: BorderRadius.circular(36),
                                     ),
-                                    //control Nombre
                                     child: TextFormField(
                                       controller: textcontrollerEmail,
                                       obscureText: false,
@@ -452,7 +450,6 @@ class _RegistroWidgetState extends State<RegistroWidget> {
                                       color: Color(0xFFC9C6C6),
                                       borderRadius: BorderRadius.circular(36),
                                     ),
-                                    //contro nickName
                                     child: TextFormField(
                                       controller: textcontrollerPass,
                                       obscureText: false,
@@ -523,7 +520,6 @@ class _RegistroWidgetState extends State<RegistroWidget> {
                                       color: Color(0xFFC9C6C6),
                                       borderRadius: BorderRadius.circular(36),
                                     ),
-                                    //contro Corre
                                     child: TextFormField(
                                       controller: textcontrollerUser,
                                       obscureText: false,
@@ -578,7 +574,6 @@ class _RegistroWidgetState extends State<RegistroWidget> {
                                       color: Color(0xFFC9C6C6),
                                       borderRadius: BorderRadius.circular(36),
                                     ),
-                                    // control Contraseña
                                     child: TextFormField(
                                       controller: textcontrollerName,
                                       obscureText: false,
@@ -647,7 +642,6 @@ class _RegistroWidgetState extends State<RegistroWidget> {
                                       color: Color(0xFFC9C6C6),
                                       borderRadius: BorderRadius.circular(36),
                                     ),
-                                    //control ConContraseña
                                     child: TextFormField(
                                       controller: textcontrollerConPass,
                                       obscureText: false,

@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
-import 'package:matrix_game/domain/controller/image_controller.dart';
-import 'package:matrix_game/ui/pages/login/login_widget.dart';
-import 'package:matrix_game/ui/pages/ubicacion/ubicacion.dart';
+import 'package:proyecto_mintic/controlador/image_controller.dart';
+import 'package:proyecto_mintic/ui/pages/login/login_widget.dart';
+import 'package:proyecto_mintic/ui/pages/ubicacion/ubicacion.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 
