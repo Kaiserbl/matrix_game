@@ -403,6 +403,8 @@ class _RegistroWidgetState extends State<RegistroWidget> {
                                                     } catch (e) {
                                                       print(e);
                                                     }
+                                                  } else {
+                                                    errorCheckBox();
                                                   }
                                                 },
                                                 child: Padding(
