@@ -136,7 +136,7 @@ class _RegistroWidgetState extends State<RegistroWidget> {
               ),
             ],
           );
-        });
+        }); //Prueba Push
   }
 
   void errorCheckBox() {
