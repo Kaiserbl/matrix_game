@@ -1,8 +1,7 @@
 import 'package:get/get.dart';
-import 'package:matrix_game/domain/controller/auth_controller.dart';
-import 'package:matrix_game/domain/controller/image_controller.dart';
-import 'package:matrix_game/ui/pages/inicio/inicio_widget.dart';
-import 'package:matrix_game/ui/pages/registro/registro_widget.dart';
+import 'package:proyecto_mintic/controlador/image_controller.dart';
+import 'package:proyecto_mintic/ui/pages/inicio/inicio_widget.dart';
+import 'package:proyecto_mintic/ui/pages/registro/registro_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 
@@ -16,25 +15,9 @@ class LoginWidget extends StatefulWidget {
 class _LoginWidgetState extends State<LoginWidget> {
   late TextEditingController textController1;
   late TextEditingController textController2;
-  AuthenticationController authenticationController = Get.find();
   late bool passwordVisibility;
   final formKey = GlobalKey<FormState>();
   final scaffoldKey = GlobalKey<ScaffoldState>();
-
-  _login(theEmail, thePassword) async {
-    print('_login $theEmail $thePassword');
-    try {
-      AuthenticationController authenticationController = Get.find();
-      await authenticationController.login(theEmail, thePassword);
-    } catch (err) {
-      Get.snackbar(
-        "Login",
-        err.toString(),
-        icon: Icon(Icons.person, color: Colors.red),
-        snackPosition: SnackPosition.BOTTOM,
-      );
-    }
-  }
 
   @override
   void initState() {
@@ -438,32 +421,26 @@ class _LoginWidgetState extends State<LoginWidget> {
                                         padding: const EdgeInsets.all(-8),
                                         primary: Color(0xFFFABAFA),
                                       ),
-                                      onPressed: () async {
-                                        // final form = _formKey.currentState;
-                                        // form!.save();
-                                        try {
-                                          print("me rompo");
-                                          await authenticationController.login(
-                                            textController1.text,
-                                            textController2.text,
-                                          );
-                                          print("no me rompi");
-                                          //Get.back();
-                                        } catch (e) {
-                                          //la variable (e) contiene la informacion del error
-                                          //Cuando haya al gún error, aquí se recibe la información
-                                          print(e);
-                                          if (e == 'user-not-found') {
-                                            Get.snackbar(
-                                              "Usuario no encontrado",
-                                              "No se encontró un usuario que use ese email.",
-                                            );
-                                          } else if (e == 'wrong-password') {
-                                            Get.snackbar(
-                                              "Contraseña equivocada",
-                                              "La contraseña proveida por el usuario no es correcta.",
-                                            );
-                                          }
+                                      onPressed: () {
+                                        print(isEmail(textController1.text));
+                                        if (textController1.text.isEmpty &&
+                                            textController2.text.isEmpty) {
+                                          return errorFormato3();
+                                        } else if (textController1
+                                            .text.isEmpty) {
+                                          return errorFormato4();
+                                        } else if (textController2
+                                            .text.isEmpty) {
+                                          return errorFormato5();
+                                        } else if (isEmail(
+                                                textController1.text) ==
+                                            false) {
+                                          return errorFormato();
+                                        } else if (textController2.text.length <
+                                            6) {
+                                          return errorFormato2();
+                                        } else {
+                                          Get.to(() => InicioWidget());
                                         }
                                       },
                                       child: Padding(
