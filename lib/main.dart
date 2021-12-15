@@ -24,6 +24,7 @@ void main() {
 
 //6000+8000
 class MyApp extends StatelessWidget {
+  //final Future<FirebaseApp> _initialization = Firebase.initializeApp();
   // This widget is the root of your application.
 
   @override
