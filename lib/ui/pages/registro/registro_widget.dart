@@ -14,12 +14,12 @@ class RegistroWidget extends StatefulWidget {
 }
 
 class _RegistroWidgetState extends State<RegistroWidget> {
-  late TextEditingController textController1;
+  late TextEditingController textcontrollerEmail; //Email
   late bool checkboxListTileValue;
-  late TextEditingController textController2;
-  late TextEditingController textController3;
-  late TextEditingController textController4;
-  late TextEditingController textController5;
+  late TextEditingController textcontrollerPass; //Password
+  late TextEditingController textcontrollerUser;
+  late TextEditingController textcontrollerName;
+  late TextEditingController textcontrollerConPass; //Confirmar Password
   AuthenticationController authenticationController = Get.find();
   final formKey = GlobalKey<FormState>();
   final scaffoldKey = GlobalKey<ScaffoldState>();
@@ -27,11 +27,11 @@ class _RegistroWidgetState extends State<RegistroWidget> {
   @override
   void initState() {
     super.initState();
-    textController1 = TextEditingController();
-    textController2 = TextEditingController();
-    textController3 = TextEditingController();
-    textController4 = TextEditingController();
-    textController5 = TextEditingController();
+    textcontrollerEmail = TextEditingController(); //Email
+    textcontrollerPass = TextEditingController();
+    textcontrollerUser = TextEditingController();
+    textcontrollerName = TextEditingController();
+    textcontrollerConPass = TextEditingController();
     checkboxListTileValue = false;
   }
 
@@ -263,7 +263,7 @@ class _RegistroWidgetState extends State<RegistroWidget> {
                                     ),
                                     //control Nombre
                                     child: TextFormField(
-                                      controller: textController1,
+                                      controller: textcontrollerEmail,
                                       obscureText: false,
                                       decoration: InputDecoration(
                                         enabledBorder: UnderlineInputBorder(
@@ -300,7 +300,7 @@ class _RegistroWidgetState extends State<RegistroWidget> {
                                       keyboardType: TextInputType.emailAddress,
                                       validator: (val) {
                                         if (val!.isEmpty) {
-                                          return 'El campo es requerido';
+                                          return 'Correo';
                                         }
 
                                         return null;
@@ -382,36 +382,31 @@ class _RegistroWidgetState extends State<RegistroWidget> {
                                                   primary: Color(0xFFFABAFA),
                                                 ),
                                                 onPressed: () async {
-                                                  if (checkboxListTileValue ==
-                                                      true) {
-                                                    try {
-                                                      await authenticationController
-                                                          .signup(
-                                                              userName:
-                                                                  textController1
-                                                                      .text,
-                                                              nickName:
-                                                                  textController2
-                                                                      .text,
-                                                              email:
-                                                                  textController3
-                                                                      .text,
-                                                              password:
-                                                                  textController4
-                                                                      .text);
-                                                      /*Get.back();*/
-                                                    } catch (e) {
-                                                      print(e);
-                                                    }
-                                                  } else {
-                                                    errorCheckBox();
+                                                  print("Registrando...");
+                                                  try {
+                                                    await authenticationController.signup(
+                                                        userName:
+                                                            textcontrollerName
+                                                                .text,
+                                                        nickName:
+                                                            textcontrollerUser
+                                                                .text,
+                                                        email:
+                                                            textcontrollerEmail
+                                                                .text,
+                                                        password:
+                                                            textcontrollerPass
+                                                                .text);
+                                                    Get.back();
+                                                  } catch (e) {
+                                                    print(e);
                                                   }
                                                 },
                                                 child: Padding(
                                                   padding: EdgeInsetsDirectional
                                                       .fromSTEB(0, 0, 0, 0),
                                                   child: Text(
-                                                    'Registro2',
+                                                    'Registro',
                                                     textAlign: TextAlign.center,
                                                     style: FlutterFlowTheme
                                                         .bodyText1
@@ -459,7 +454,7 @@ class _RegistroWidgetState extends State<RegistroWidget> {
                                     ),
                                     //contro nickName
                                     child: TextFormField(
-                                      controller: textController2,
+                                      controller: textcontrollerPass,
                                       obscureText: false,
                                       decoration: InputDecoration(
                                         enabledBorder: UnderlineInputBorder(
@@ -497,7 +492,7 @@ class _RegistroWidgetState extends State<RegistroWidget> {
                                           TextInputType.visiblePassword,
                                       validator: (val) {
                                         if (val!.isEmpty) {
-                                          return 'El campo es requerido';
+                                          return 'Contraseña';
                                         }
 
                                         return null;
@@ -530,7 +525,7 @@ class _RegistroWidgetState extends State<RegistroWidget> {
                                     ),
                                     //contro Corre
                                     child: TextFormField(
-                                      controller: textController3,
+                                      controller: textcontrollerUser,
                                       obscureText: false,
                                       decoration: InputDecoration(
                                         enabledBorder: UnderlineInputBorder(
@@ -566,7 +561,7 @@ class _RegistroWidgetState extends State<RegistroWidget> {
                                       textAlign: TextAlign.center,
                                       validator: (val) {
                                         if (val!.isEmpty) {
-                                          return 'El campo es requerido';
+                                          return 'Usuario';
                                         }
 
                                         return null;
@@ -585,7 +580,7 @@ class _RegistroWidgetState extends State<RegistroWidget> {
                                     ),
                                     // control Contraseña
                                     child: TextFormField(
-                                      controller: textController4,
+                                      controller: textcontrollerName,
                                       obscureText: false,
                                       decoration: InputDecoration(
                                         enabledBorder: UnderlineInputBorder(
@@ -621,7 +616,7 @@ class _RegistroWidgetState extends State<RegistroWidget> {
                                       textAlign: TextAlign.center,
                                       validator: (val) {
                                         if (val!.isEmpty) {
-                                          return 'El campo es requerido';
+                                          return 'Nombre';
                                         }
 
                                         return null;
@@ -654,7 +649,7 @@ class _RegistroWidgetState extends State<RegistroWidget> {
                                     ),
                                     //control ConContraseña
                                     child: TextFormField(
-                                      controller: textController5,
+                                      controller: textcontrollerConPass,
                                       obscureText: false,
                                       decoration: InputDecoration(
                                         enabledBorder: UnderlineInputBorder(
@@ -692,7 +687,7 @@ class _RegistroWidgetState extends State<RegistroWidget> {
                                           TextInputType.visiblePassword,
                                       validator: (val) {
                                         if (val!.isEmpty) {
-                                          return 'El campo es requerido';
+                                          return 'Confirmar contraseña';
                                         }
 
                                         return null;

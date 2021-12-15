@@ -15,7 +15,7 @@ import 'package:matrix_game/domain/use_case/permission_management.dart';
 import 'package:matrix_game/ui/pages/inicio/inicio_widget.dart';
 import 'package:matrix_game/ui/pages/login/login_widget.dart';
 
-//probando rama juan Hola, Juan
+//probando rama juan
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
@@ -33,6 +33,7 @@ void main() async {
   runApp(MyApp());
 }
 
+//6000+8000
 class MyApp extends StatelessWidget {
   /*final Future<FirebaseApp> _initialization = Firebase.initializeApp();*/
   // This widget is the root of your application.
