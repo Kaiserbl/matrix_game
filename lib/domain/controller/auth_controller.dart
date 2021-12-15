@@ -1,44 +1,70 @@
+import 'package:matrix_game/data/models/user_model.dart';
+import 'package:matrix_game/domain/methods/verificacion_metodos.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 
 class AuthenticationController extends GetxController {
-  Future<void> login(theEmail, thePassword) async {
-    try {
-      await FirebaseAuth.instance
-          .signInWithEmailAndPassword(email: theEmail, password: thePassword);
-      print('OK');
-      return Future.value(true);
-    } on FirebaseAuthException catch (e) {
-      if (e.code == 'user-not-found') {
-        print('NOK 1');
-        return Future.error("User not found");
-      } else if (e.code == 'wrong-password') {
-        print('NOK 2');
-        return Future.error("Wrong password");
-      }
-    }
-    print('NOK');
+//variables observarbles
+  var isLogged = false.obs; //variable observable (obs)
+  final _userActive = Rx<UserModel?>(null);
+  AuthManagement authManagement = Get.find();
+//Este es el contructor de la clase y  llama al getLoggedUser
+  AuthenticationController() {
+    getLoggedUser();
   }
 
-  Future<void> signUp(email, password) async {
-    try {
-      await FirebaseAuth.instance
-          .createUserWithEmailAndPassword(email: email, password: password);
-      return Future.value(true);
-    } on FirebaseAuthException catch (e) {
-      if (e.code == 'weak-password') {
-        return Future.error('The password provided is too weak.');
-      } else if (e.code == 'email-already-in-use') {
-        return Future.error('The account already exists for that email.');
-      }
+  // Este Método trae la info del usuario cuando el usuario tiene una sesión activa
+  getLoggedUser() async {
+    _userActive.value = await authManagement.getLoggedUser();
+    if (_userActive.value != null) {
+      isLogged.value = true;
     }
   }
 
-  Future<void> logOut() async {
+//crear los métodos login, logout y signup
+  Future<void> login(email, password) async {
     try {
-      await FirebaseAuth.instance.signOut();
+      _userActive.value =
+          await authManagement.signIn(email: email, password: password);
+      print("comienzo xd");
+      //print(_userActive.value!.toMap());
+      print("termino xd");
+      if (_userActive.value != null) {
+        print("entre");
+        isLogged.value = true;
+      }
     } catch (e) {
-      return Future.error(e.toString());
+      return Future.error(e);
+    }
+    printInfo(info: 'Ok');
+  }
+
+  void logout() async {
+    await authManagement.signOut();
+    isLogged.value = false; // el estado cambia al momento de salir (signUp)
+  }
+
+  String userEmail() {
+    String email = FirebaseAuth.instance.currentUser!.email ?? "a@a.com";
+    return email;
+  }
+
+  String getUid() {
+    String uid = FirebaseAuth.instance.currentUser!.uid;
+    return uid;
+  }
+
+  Future<void> signup({email, password, userName, nickName}) async {
+    //Este signup es del contrlador
+    try {
+      await authManagement.signUp(
+          // Este signUp se comunica con el authManagement
+          email: email,
+          password: password,
+          name: userName,
+          nick: nickName);
+    } catch (e) {
+      return Future.error(e);
     }
   }
 }

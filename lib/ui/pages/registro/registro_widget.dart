@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:matrix_game/domain/controller/auth_controller.dart';
 import 'package:matrix_game/domain/controller/image_controller.dart';
 import 'package:matrix_game/ui/pages/filtro/filtro_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
@@ -19,6 +20,7 @@ class _RegistroWidgetState extends State<RegistroWidget> {
   late TextEditingController textController3;
   late TextEditingController textController4;
   late TextEditingController textController5;
+  AuthenticationController authenticationController = Get.find();
   final formKey = GlobalKey<FormState>();
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -377,47 +379,25 @@ class _RegistroWidgetState extends State<RegistroWidget> {
                                                       const EdgeInsets.all(-8),
                                                   primary: Color(0xFFFABAFA),
                                                 ),
-                                                onPressed: () {
-                                                  if (textController4.text.isEmpty &&
-                                                      textController3
-                                                          .text.isEmpty &&
-                                                      textController1
-                                                          .text.isEmpty &&
-                                                      textController2
-                                                          .text.isEmpty &&
-                                                      textController5
-                                                          .text.isEmpty) {
-                                                    return errorFormatos3();
-                                                  } else if (textController4
-                                                          .text.isEmpty ||
-                                                      textController3
-                                                          .text.isEmpty ||
-                                                      textController1
-                                                          .text.isEmpty ||
-                                                      textController2
-                                                          .text.isEmpty ||
-                                                      textController5
-                                                          .text.isEmpty) {
-                                                    return errorFormatos3();
-                                                  } else if (textController4
-                                                          .text.isEmpty ||
-                                                      textController3
-                                                          .text.isEmpty) {
-                                                    return errorFormatos4();
-                                                  } else if (isEmail(
-                                                          textController1
-                                                              .text) ==
-                                                      false) {
-                                                    return errorFormatos();
-                                                  } else if (textController2
-                                                          .text !=
-                                                      textController5.text) {
-                                                    return errorFormatos2();
-                                                  } else if (!checkboxListTileValue) {
-                                                    return errorCheckBox();
-                                                  } else {
-                                                    Get.to(
-                                                        () => FiltroWidget());
+                                                onPressed: () async {
+                                                  try {
+                                                    await authenticationController
+                                                        .signup(
+                                                            userName:
+                                                                textController1
+                                                                    .text,
+                                                            nickName:
+                                                                textController2
+                                                                    .text,
+                                                            email:
+                                                                textController3
+                                                                    .text,
+                                                            password:
+                                                                textController4
+                                                                    .text);
+                                                    /*Get.back();*/
+                                                  } catch (e) {
+                                                    print(e);
                                                   }
                                                 },
                                                 child: Padding(

@@ -16,6 +16,7 @@ class LoginWidget extends StatefulWidget {
 class _LoginWidgetState extends State<LoginWidget> {
   late TextEditingController textController1;
   late TextEditingController textController2;
+  AuthenticationController authenticationController = Get.find();
   late bool passwordVisibility;
   final formKey = GlobalKey<FormState>();
   final scaffoldKey = GlobalKey<ScaffoldState>();
@@ -438,27 +439,31 @@ class _LoginWidgetState extends State<LoginWidget> {
                                         primary: Color(0xFFFABAFA),
                                       ),
                                       onPressed: () async {
-                                        print(isEmail(textController1.text));
-                                        if (textController1.text.isEmpty &&
-                                            textController2.text.isEmpty) {
-                                          return errorFormato3();
-                                        } else if (textController1
-                                            .text.isEmpty) {
-                                          return errorFormato4();
-                                        } else if (textController2
-                                            .text.isEmpty) {
-                                          return errorFormato5();
-                                        } else if (isEmail(
-                                                textController1.text) ==
-                                            false) {
-                                          return errorFormato();
-                                        } else if (textController2.text.length <
-                                            6) {
-                                          return errorFormato2();
-                                        } else {
-                                          await _login(textController1.text,
-                                              textController2.text);
-                                          // Get.to(() => InicioWidget());
+                                        // final form = _formKey.currentState;
+                                        // form!.save();
+                                        try {
+                                          print("me rompo");
+                                          await authenticationController.login(
+                                            textController1.text,
+                                            textController2.text,
+                                          );
+                                          print("no me rompi");
+                                          //Get.back();
+                                        } catch (e) {
+                                          //la variable (e) contiene la informacion del error
+                                          //Cuando haya al gún error, aquí se recibe la información
+                                          print(e);
+                                          if (e == 'user-not-found') {
+                                            Get.snackbar(
+                                              "Usuario no encontrado",
+                                              "No se encontró un usuario que use ese email.",
+                                            );
+                                          } else if (e == 'wrong-password') {
+                                            Get.snackbar(
+                                              "Contraseña equivocada",
+                                              "La contraseña proveida por el usuario no es correcta.",
+                                            );
+                                          }
                                         }
                                       },
                                       child: Padding(
