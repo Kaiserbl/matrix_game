@@ -15,7 +15,7 @@ import 'package:matrix_game/domain/use_case/permission_management.dart';
 import 'package:matrix_game/ui/pages/inicio/inicio_widget.dart';
 import 'package:matrix_game/ui/pages/login/login_widget.dart';
 
-//probando rama juan
+//probando rama juan Hola, Juan
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
