@@ -3,6 +3,7 @@ import 'package:matrix_game/domain/methods/verificacion_metodos.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 
+//Cambio
 class AuthenticationController extends GetxController {
 //variables observarbles
   var isLogged = false.obs; //variable observable (obs)
